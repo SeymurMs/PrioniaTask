@@ -1,0 +1,46 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+   <!-- Content Start -->
+        <div class="content">
+        
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Basic Form</h6>
+                            <form method="post" enctype="multipart/form-data">
+                                 <div class="mb-3">
+                                    <label for="text" asp-for="@Model.DiscountPercent" class="form-label">DiscountPercent</label> 
+                                    <input type="number" asp-for="@Model.DiscountPercent" class="form-control" id="TitleId"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Title" class="form-label">Title</label> 
+                                    <input type="text" asp-for="@Model.Title" class="form-control" id="TitleId"/>
+                                </div>
+                                   <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Description" class="form-label">Description</label>
+                                    <input type="text" asp-for="@Model.Description" class="form-control" id="DcId"/>
+                                </div>
+                                   <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Photo" class="form-label">Photo</label>
+                                    <input type="file" asp-for="@Model.Photo"  class="form-control" id="TitleId"/>
+                                    <span asp-validation-for="@Model.Photo"></span> 
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form> 
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+            <!-- Form End -->
+
+        </div>
+        <!-- Content End -->
+
+

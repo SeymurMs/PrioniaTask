@@ -1,0 +1,56 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Table Start -->
+<a asp-controller="Product" asp-action="Create" class="btn btn-primary" >Add</a>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Basic Table</h6>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Titte</th>
+                            <th scope="col">Raiting</th>
+                            <th scope="col">StockCount</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">IsDeleted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td><img style="width:50px" src="~/products/@item.PImages.FirstOrDefault(p=>p.IsMain==true).Image"></td>
+                                <td>@item.Price</td>
+                                <td>@item.Title</td>
+                                <td>@item.Raiting</td>
+                                <td>@item.StockCount</td>
+                                <td>@item.Description</td>
+                                <td>@item.IsDeleted</td>
+                                <td>
+                                <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" >Edit</a>
+                                </td>
+                                <td>
+                                <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" >Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Table End -->
+

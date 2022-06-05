@@ -1,0 +1,66 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+ <!-- Content Start -->
+        <div class="content">
+        
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Basic Form</h6>
+                            <form method="post" enctype="multipart/form-data">
+                                 <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Price" class="form-label">Price</label> 
+                                    <input type="number" asp-for="@Model.Price" class="form-control" id="TitleId"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text" asp-for="@Model.StockCount" class="form-label">StockCount</label> 
+                                    <input type="number" asp-for="@Model.StockCount" class="form-control" id="TitleId"/>
+                                </div>
+                                  <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Raiting" class="form-label">Raiting</label> 
+                                    <input type="number" asp-for="@Model.Raiting" class="form-control" id="TitleId"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Title" class="form-label">Title</label> 
+                                    <input type="text" asp-for="@Model.Title" class="form-control" id="TitleId"/>
+                                </div>
+                                   <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Description" class="form-label">Description</label>
+                                    <input type="text" asp-for="@Model.Description" class="form-control" id="DcId"/>
+                                </div>
+
+                                   <div class="mb-3">
+                                    <label for="text" asp-for="@Model.MainPhoto" class="form-label">MainPhoto</label>
+                                    <input type="file" asp-for="@Model.MainPhoto"  class="form-control" id="TitleId"/>
+                                    <span asp-validation-for="@Model.MainPhoto"></span> 
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="text" asp-for="@Model.Photos" class="form-label">PImages</label>
+                                    <input type="file" asp-for="@Model.Photos" multiple  class="form-control" id="TitleId"/>
+                                    <span asp-validation-for="@Model.Photos"></span> 
+                                </div>
+                                   <div class="mb-3">
+                                   <select class="select2 form-control" asp-for="@Model.CategoryId" asp-items="@(new SelectList(ViewBag.categories,"Id","Name"))">
+                                       <option disabled selected>Category</option>
+                                   </select>
+                                </div>
+                                 
+
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form> 
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+            <!-- Form End -->
+
+        </div>
+        <!-- Content End -->
+
